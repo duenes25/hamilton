@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -war target/HamiltonRest-0.1.0.war --server.port=$PORT $JAR_OPTS
+web: java -Dserver.port=$PORT $JAVA_OPTS -jar target/*.war
