@@ -20,8 +20,23 @@ public class DrugDAOImpl extends DrugDAO{
 	public Drug findByNdc(String ndc) {
 		
 	    Drug result = new Drug();
+	    System.out.println("Start iterating through Drug List.  Comparing with NDC: " + ndc);
 	    for (Drug drug : DrugDAO.drugs) {
-	        if (ndc.equals(drug.getNdc())) {
+	        if (ndc.trim().equalsIgnoreCase(drug.getNdc().trim())) {
+	            result = drug;
+	            break;
+	        }
+	    }
+		return result;
+	}
+	
+	@Override
+	public Drug findByName(String drugName) {
+		
+	    Drug result = new Drug();
+	    System.out.println("Start iterating through Drug List");
+	    for (Drug drug : DrugDAO.drugs) {
+	        if (drugName.trim().equalsIgnoreCase(drug.getName().trim())) {
 	            result = drug;
 	            break;
 	        }
@@ -29,5 +44,18 @@ public class DrugDAOImpl extends DrugDAO{
 		return result;
 	}
 
+	@Override
+	public Drug findByNameAndNDC(String drugName, String ndc) {
+		
+	    Drug result = new Drug();
+	    System.out.println("Start iterating through Drug List");
+	    for (Drug drug : DrugDAO.drugs) {
+	        if (ndc.trim().equalsIgnoreCase(drug.getNdc().trim()) && drugName.trim().equalsIgnoreCase(drug.getName().trim())) {
+	            result = drug;
+	            break;
+	        }
+	    }
+		return result;
+	}
 	
 }

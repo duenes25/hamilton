@@ -9,8 +9,8 @@ public class Pharmacy extends Facility {
 	}
 	
 	public Pharmacy(String name, Location location,
-			PharmacyType pharmacyType) {
-		super(name, location);
+			PharmacyType pharmacyType, Address address) {
+		super(name, location, address);
 		this.pharmacyType = pharmacyType;
 	}
 

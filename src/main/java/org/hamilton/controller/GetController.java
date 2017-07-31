@@ -68,9 +68,10 @@ public class GetController {
      * Request should include drug name
      */
     @RequestMapping("/drugInfo")
-    public Drug drugInfo(@RequestParam(value="ndc", defaultValue="") String ndc) {
+    public Drug drugInfo(@RequestParam(value="ndc", defaultValue="") String ndc,
+    					@RequestParam(value="drugName", defaultValue="") String drugName) {
         
-    	return drugService.getDrugInfo(ndc);
+    	return drugService.getDrugInfo(drugName, ndc);
 
     }
     

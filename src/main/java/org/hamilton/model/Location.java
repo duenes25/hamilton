@@ -5,6 +5,10 @@ public class Location {
 	public int longitude;
 	
 
+	public Location() {
+		super();
+	}
+	
 	public Location(int latitude, int longitude) {
 		super();
 		this.latitude = latitude;
